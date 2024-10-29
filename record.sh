@@ -1,13 +1,11 @@
 #!/bin/bash
 
-ffmpeg -rtsp_transport tcp \
-	-stimeout 3000000 \
-	-i rtsp://yourusername:yourpassword@camip:88/videoMain \
-	-i rtsp://yourusername:yourpassword@camip:88/audio \
-	-f segment \
-	-segment_time 1800 \
-	-vsync vfr \
-	-reset_timestamps 1 \
-	-c copy \
-	-strftime 1 \
-	camera_%Y-%m-%d_%H-%M-%S.mkv
+        ffmpeg -rtsp_transport tcp \
+        -timeout 3000000 \
+        -i rtsp://username:password@192.168.0.100:88/videoMain  \
+        -f segment \
+        -segment_time 1800 \
+        -reset_timestamps 1 \
+        -c:v copy \
+        -strftime 1 \
+        %Y-%m-%d_%H-%M-%S.mp4
