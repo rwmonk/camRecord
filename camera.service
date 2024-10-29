@@ -1,0 +1,14 @@
+[Unit]
+Description=Video Recorder
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/save/video/files
+ExecStart=/bin/bash /path/to/script/record.sh
+Restart=always
+RestartSec=10
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
