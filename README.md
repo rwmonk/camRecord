@@ -1,4 +1,4 @@
-Record RTSP streams from FOSCAM IP cameras
+Record RTSP streams from IP cameras
 --------------------------------------------
 
 1. camera.service gets changed with relevant info and placed in /etc/systemd/system, reload daemon...
